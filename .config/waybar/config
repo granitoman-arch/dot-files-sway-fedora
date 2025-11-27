@@ -1,0 +1,79 @@
+{
+    // === CONFIGURACIÓN GLOBAL ===
+    // Asegúrate de que esta fuente esté instalada. 
+    // Usamos 'Fira Code Nerd Font Mono' para incluir los iconos (glifos).
+    "font": "Fira Code Nerd Font Mono 10", 
+    "layer": "top",
+    "position": "bottom",
+    "height": 30,
+
+    // === MÓDULOS EN LA BARRA ===
+    "modules-left": [
+        "sway/workspaces",
+        "sway/mode"
+    ],
+    "modules-center": [
+        "sway/window"
+    ],
+    "modules-right": [
+        "temperature",
+        "memory",
+        "cpu",
+        "pulseaudio",
+        "network",
+        "battery",
+        "clock"
+    ],
+
+    // =======================================================
+    // DEFINICIONES DE MÓDULOS (Con iconos)
+    // =======================================================
+    "sway/workspaces": {
+        "format": " {icon} ",
+        "format-icons": {
+            "focused": "",  // Círculo relleno
+            "default": ""   // Círculo vacío
+        },
+        "all-outputs": true
+    },
+    "sway/mode": {
+        "format": " <span style=\"background-color: #ff3333; color: #000000; padding: 3px;\">{}</span> "
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<small>{calendar}</small>",
+        "format": " {:%a %d %b %H:%M}"
+    },
+    "cpu": {
+        "format": " {usage}%", // Icono de procesador
+        "tooltip": false
+    },
+    "memory": {
+        "format": "󰍛 {}%", // Icono de RAM
+        "tooltip-format": "RAM {used}/{total} GB"
+    },
+    "temperature": {
+        "format": " {temperatureC}°C", // Icono de termómetro
+        "format-icons": ["", "", ""]
+    },
+    "network": {
+        "format-wifi": " {essid}", // Icono de WiFi
+        "format-ethernet": "󰈀 {ifname}", // Icono de cable
+        "format-disconnected": "󰖪 Desconectado" // Icono de desconexión
+    },
+    "pulseaudio": {
+        "format": " {volume}%", // Icono de volumen
+        "format-muted": "󰝟 Silencio", // Icono de silencio
+        "on-click": "pavucontrol"
+    },
+    "battery": {
+        "states": {
+            "good": 90,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-charging": " {capacity}%", // Icono de rayo (cargando)
+        "format-plugged": " {capacity}%",
+        "format-icons": ["", "", "", "", ""] // Iconos de batería llena/vacía
+    }
+}
