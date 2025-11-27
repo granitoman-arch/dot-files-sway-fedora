@@ -74,6 +74,9 @@ output * bg ~/Wallpapers/Fondos/Elevationsway.png fill
     # Start your launcher
     bindsym $mod+d exec $menu
 
+    # Usar Mod +  (de Files) para abrir Thunar en la carpeta personal
+    bindsym $mod+Shift+f exec thunar
+
     # =======================================================
     # LANZAR GESTOR DE RED (NMTUI)
     # =======================================================
