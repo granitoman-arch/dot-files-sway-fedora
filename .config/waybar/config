@@ -4,7 +4,7 @@
     // Usamos 'Fira Code Nerd Font Mono' para incluir los iconos (glifos).
     "font": "Fira Code Nerd Font Mono 10", 
     "layer": "top",
-    "position": "bottom",
+    "position": "top",
     "height": 30,
 
     // === MÓDULOS EN LA BARRA ===
@@ -32,17 +32,22 @@
         "format": " {icon} ",
         "format-icons": {
             "focused": "",  // Círculo relleno
-            "default": ""   // Círculo vacío
+            "default": ""    // Círculo vacío
         },
         "all-outputs": true
     },
     "sway/mode": {
         "format": " <span style=\"background-color: #ff3333; color: #000000; padding: 3px;\">{}</span> "
     },
+    
+    // MÓDULO CLOCK (CORREGIDO PARA ESPAÑOL)
     "clock": {
-        "tooltip-format": "<big>{:%Y-%m-%d}</big>\n<small>{calendar}</small>",
-        "format": " {:%a %d %b %H:%M}"
+        "tooltip-format": "<big>%A, %d de %B de %Y</big>\n<small>%H:%M</small>",
+        "format": "{:%a, %d %b}", 
+        "format-alt": "{:%H:%M:%S}",
+        "locale": "es_CL.UTF-8"      
     },
+    
     "cpu": {
         "format": " {usage}%", // Icono de procesador
         "tooltip": false

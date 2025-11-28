@@ -17,12 +17,11 @@ set $right l
 set $term foot
 # Your preferred application launcher
 set $menu wofi --show drun
-
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
 #output * bg /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png fill
-output * bg ~/Wallpapers/Fondos/Elevationsway.png fill
+#output * bg ~/.config/sway/wallpapers/wallsway33.png fill
 #
 # Example configuration:
 #
@@ -231,19 +230,19 @@ bindsym $mod+r mode "resize"
 # Status Bar:
 #
 # Read `man 5 sway-bar` for more information about this section.
-bar {
-    position top
+#bar {
+    #position top
 
     # When the status_command prints a new line to stdout, swaybar updates.
     # The default just shows the current date and time.
-    status_command while date +'%Y-%m-%d %X'; do sleep 1; done
+    #status_command while date +'%Y-%m-%d %X'; do sleep 1; done
 
-    colors {
-        statusline #ffffff
-        background #323232
-        inactive_workspace #32323200 #32323200 #5c5c5c
-    }
-}
+    #colors {
+     #   statusline #ffffff
+      #  background #323232
+       # inactive_workspace #32323200 #32323200 #5c5c5c
+    #}
+#}
 
 include /etc/sway/config.d/*
 # inicia waybar
@@ -254,3 +253,7 @@ exec waybar
 #exec swaybg -i /hypjorge/home/Wallpapers/Fondos/Elevationsway -m fill
 # Ejecutar Udiskie para montaje automatico de unidades USB/externas
 exec udiskie --no-tray
+# Iniciar el ciclo de fondos de pantalla cada 5 minutos usando bash
+#exec bash -c "$HOME/.config/sway/scripts/wallpaper_cycle.sh &"
+#exec $HOME/.config/sway/scripts/wallpaper_cycle.sh &
+exec sh -c "$HOME/.config/sway/scripts/wallpaper_cycle.sh &"
